@@ -13,9 +13,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Resume',
+      title: 'B. Cihan Cengiz',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(primarySwatch: Colors.blue),
       darkTheme: ThemeData.dark(),
       home: Scaffold(body: Page()),
     );
@@ -28,8 +27,8 @@ class Page extends StatelessWidget {
     return SingleChildScrollView(
       child: Center(
         child: Container(
-          padding: const EdgeInsets.all(64.0),
-          constraints: BoxConstraints(maxWidth: 720, minWidth: 360),
+          padding: const EdgeInsets.all(16.0),
+          constraints: BoxConstraints(maxWidth: 720),
           child: Card(
             elevation: 4,
             child: Column(
@@ -47,7 +46,6 @@ class Page extends StatelessWidget {
                           BorderRadius.vertical(top: Radius.circular(8))),
                   child: Container(
                     padding: const EdgeInsets.all(8.0),
-                    width: 300,
                     child: Column(
                       mainAxisSize: MainAxisSize.min,
                       children: [
@@ -60,7 +58,6 @@ class Page extends StatelessWidget {
                 // header
                 Container(
                   padding: const EdgeInsets.all(16.0),
-                  constraints: BoxConstraints(minWidth: 400),
                   child: Column(
                     mainAxisSize: MainAxisSize.min,
                     children: [
@@ -150,104 +147,104 @@ class BodyWidget extends StatelessWidget {
 class TimelinesWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: Column(
-        mainAxisSize: MainAxisSize.min,
-        children: [
-          TimelineTile(
-            oppositeContents: TimelineNodeLeftSideWidget(
-              projects: [
-                ProjectsModel(
-                    name: 'SwapiMiner',
-                    source: 'https://github.com/bcihanc/flutter_api_sample',
-                    icon: FontAwesomeIcons.github),
-                ProjectsModel(
-                    name: 'Shopzone',
-                    source:
-                        'https://github.com/bcihanc/flutter_shoppingapp_sample',
-                    icon: FontAwesomeIcons.github),
-                ProjectsModel(
-                    name: 'Tasky',
-                    source: 'https://github.com/bcihanc/flutter_todo_sample',
-                    icon: FontAwesomeIcons.github),
-                ProjectsModel(
-                    name: 'Trailerify',
-                    source:
-                        'https://github.com/bcihanc/flutter_videoapp_sample',
-                    icon: FontAwesomeIcons.github),
-              ],
-            ),
-            contents: TimelineNodeRightSideWidget(
-              company: 'Samples',
-              title: 'Flutter Dev - 2021',
-              body:
-                  "Hem egitim hemde portfolio amacli yarattigim bir kac uygulama, rest api isteklerini, local veritabani kontrollerini ve state yonetimi gibi konulara nasil yaklastigimi bu projelerden gorebilirsiniz.",
-            ),
-            node: TimelineNode(
-              indicator: OutlinedDotIndicator(),
-              startConnector: TransparentConnector(),
-              endConnector: SolidLineConnector(),
-            ),
+    return Column(
+      mainAxisSize: MainAxisSize.min,
+      children: [
+        TimelineTile(
+          oppositeContents: TimelineNodeLeftSideWidget(
+            projects: [
+              ProjectsModel(
+                  name: 'Yonder',
+                  source: 'https://github.com/TeamEPIC/flutter_hackathon_21',
+                  icon: FontAwesomeIcons.github),
+              ProjectsModel(
+                  name: 'SwapiMiner',
+                  source: 'https://github.com/bcihanc/flutter_api_sample',
+                  icon: FontAwesomeIcons.github),
+              ProjectsModel(
+                  name: 'Shopzone',
+                  source:
+                      'https://github.com/bcihanc/flutter_shoppingapp_sample',
+                  icon: FontAwesomeIcons.github),
+              ProjectsModel(
+                  name: 'Tasky',
+                  source: 'https://github.com/bcihanc/flutter_todo_sample',
+                  icon: FontAwesomeIcons.github),
+              ProjectsModel(
+                  name: 'Trailerify',
+                  source: 'https://github.com/bcihanc/flutter_videoapp_sample',
+                  icon: FontAwesomeIcons.github),
+            ],
           ),
-          TimelineTile(
-            oppositeContents: TimelineNodeLeftSideWidget(
-              projects: [
-                ProjectsModel(
-                    name: 'reff',
-                    source: 'https://github.com/bcihanc/reff',
-                    icon: FontAwesomeIcons.github),
-                ProjectsModel(
-                    name: 'reff web',
-                    source: 'https://github.com/bcihanc/reff_web',
-                    icon: FontAwesomeIcons.github),
-                ProjectsModel(
-                    name: 'reff shared',
-                    source: 'https://github.com/bcihanc/reff_shared',
-                    icon: FontAwesomeIcons.github),
-              ],
-            ),
-            contents: TimelineNodeRightSideWidget(
-              company: 'Kare Agency',
-              title: 'Flutter Dev - 2020',
-              body:
-                  "Firebase'in neredeyse tum yeteneklerini kullanan bir anket uygulamasi, mobil taraf kullanicilarla etkilesime gecen modul, web tarafi veritabanini ve istatistikleri yoneten modul.",
-            ),
-            node: TimelineNode(
-              indicator: OutlinedDotIndicator(),
-              startConnector: SolidLineConnector(),
-              endConnector: SolidLineConnector(),
-            ),
+          contents: TimelineNodeRightSideWidget(
+            company: 'Samples',
+            title: 'Flutter Dev - 2021',
+            body:
+                "Hem egitim hemde portfolio amacli yarattigim bir kac uygulama, rest api isteklerini, local veritabani kontrollerini ve state yonetimi gibi konulara nasil yaklastigimi bu projelerden gorebilirsiniz.",
           ),
-          TimelineTile(
-            oppositeContents: TimelineNodeLeftSideWidget(
-              projects: [
-                ProjectsModel(
-                    name: 'Easy Workouts',
-                    source:
-                        'https://play.google.com/store/apps/details?id=com.greycatapps.workouts&hl=en&gl=US',
-                    icon: FontAwesomeIcons.android),
-                ProjectsModel(
-                    name: "Smoker's Calc",
-                    source:
-                        'https://play.google.com/store/apps/details?id=com.greycatapps.smokerscalc&hl=en&gl=US',
-                    icon: FontAwesomeIcons.android),
-              ],
-            ),
-            contents: TimelineNodeRightSideWidget(
-              company: 'Grey Cat Apps',
-              title: 'Flutter Dev - 2019',
-              body:
-                  "Flutter ile birlikte gecirdigimiz ilk 6 ay icinde ortaya cikan 2 kucuk uygulama, AppStore ve Play Store icin yayinlama ve guncelleme deneyimi.",
-            ),
-            node: TimelineNode(
-              indicator: OutlinedDotIndicator(),
-              startConnector: SolidLineConnector(),
-              endConnector: TransparentConnector(),
-            ),
+          node: TimelineNode(
+            indicator: OutlinedDotIndicator(),
+            startConnector: TransparentConnector(),
+            endConnector: SolidLineConnector(),
           ),
-        ],
-      ),
+        ),
+        TimelineTile(
+          oppositeContents: TimelineNodeLeftSideWidget(
+            projects: [
+              ProjectsModel(
+                  name: 'reff',
+                  source: 'https://github.com/bcihanc/reff',
+                  icon: FontAwesomeIcons.github),
+              ProjectsModel(
+                  name: 'reff web',
+                  source: 'https://github.com/bcihanc/reff_web',
+                  icon: FontAwesomeIcons.github),
+              ProjectsModel(
+                  name: 'reff shared',
+                  source: 'https://github.com/bcihanc/reff_shared',
+                  icon: FontAwesomeIcons.github),
+            ],
+          ),
+          contents: TimelineNodeRightSideWidget(
+            company: 'Kare Agency',
+            title: 'Flutter Dev - 2020',
+            body:
+                "Firebase'in neredeyse tum yeteneklerini kullanan bir anket uygulamasi, mobil taraf kullanicilarla etkilesime gecen modul, web tarafi veritabanini ve istatistikleri yoneten modul.",
+          ),
+          node: TimelineNode(
+            indicator: OutlinedDotIndicator(),
+            startConnector: SolidLineConnector(),
+            endConnector: SolidLineConnector(),
+          ),
+        ),
+        TimelineTile(
+          oppositeContents: TimelineNodeLeftSideWidget(
+            projects: [
+              ProjectsModel(
+                  name: 'Easy Workouts',
+                  source:
+                      'https://play.google.com/store/apps/details?id=com.greycatapps.workouts&hl=en&gl=US',
+                  icon: FontAwesomeIcons.android),
+              ProjectsModel(
+                  name: "Smoker's Calc",
+                  source:
+                      'https://play.google.com/store/apps/details?id=com.greycatapps.smokerscalc&hl=en&gl=US',
+                  icon: FontAwesomeIcons.android),
+            ],
+          ),
+          contents: TimelineNodeRightSideWidget(
+            company: 'Grey Cat Apps',
+            title: 'Flutter Dev - 2019',
+            body:
+                "Flutter ile birlikte gecirdigimiz ilk 6 ay icinde ortaya cikan 2 kucuk uygulama, AppStore ve Play Store icin yayinlama ve guncelleme deneyimi.",
+          ),
+          node: TimelineNode(
+            indicator: OutlinedDotIndicator(),
+            startConnector: SolidLineConnector(),
+            endConnector: TransparentConnector(),
+          ),
+        ),
+      ],
     );
   }
 }
@@ -405,51 +402,65 @@ class MadebyFlutterWidget extends StatelessWidget {
 class SkillsTagCloud extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Container(
-      padding: const EdgeInsets.all(8),
-      width: double.maxFinite,
-      child: Wrap(
-        spacing: 4,
-        runSpacing: 4,
-        children: [
-          MyChip(icon: FontAwesomeIcons.github, label: 'git'),
-          MyChip(icon: FontAwesomeIcons.code, label: 'Dart'),
-          MyChip(icon: FontAwesomeIcons.code, label: 'C#'),
-          MyChip(icon: FontAwesomeIcons.code, label: 'JavaScript'),
-          MyChip(icon: FontAwesomeIcons.code, label: 'TypeScript'),
-          MyChip(icon: FontAwesomeIcons.code, label: 'HTML'),
-          MyChip(icon: FontAwesomeIcons.code, label: 'CSS'),
-          MyChip(icon: FontAwesomeIcons.code, label: 'XML'),
-          MyChip(icon: FontAwesomeIcons.code, label: 'YAML'),
-          MyChip(icon: FontAwesomeIcons.code, label: 'JSON'),
-          MyChip(icon: FontAwesomeIcons.meteor, label: 'Kanban'),
-          MyChip(icon: FontAwesomeIcons.meteor, label: 'Agile'),
-          MyChip(icon: FontAwesomeIcons.meteor, label: 'Scrum'),
-          MyChip(icon: FontAwesomeIcons.edit, label: 'JetBrains'),
-          MyChip(icon: FontAwesomeIcons.edit, label: 'VSCode'),
-          MyChip(icon: FontAwesomeIcons.edit, label: 'Photoshop'),
-          MyChip(icon: FontAwesomeIcons.edit, label: 'Illustrator'),
-          MyChip(icon: FontAwesomeIcons.edit, label: 'Illustrator'),
-          MyChip(icon: FontAwesomeIcons.edit, label: 'XD'),
-          MyChip(icon: FontAwesomeIcons.edit, label: 'Sketch'),
-          MyChip(icon: FontAwesomeIcons.weebly, label: 'HTTP'),
-          MyChip(icon: FontAwesomeIcons.weebly, label: 'REST'),
-          MyChip(icon: FontAwesomeIcons.weebly, label: 'GraphQL'),
-          MyChip(icon: FontAwesomeIcons.brain, label: 'OOP'),
-          MyChip(icon: FontAwesomeIcons.brain, label: 'Design Patterns'),
-          MyChip(icon: FontAwesomeIcons.brain, label: 'SOLID & DRY'),
-          MyChip(icon: FontAwesomeIcons.fire, label: 'Vue'),
-          MyChip(icon: FontAwesomeIcons.fire, label: 'Wordpress'),
-          MyChip(icon: FontAwesomeIcons.fire, label: '.NET'),
-          MyChip(icon: FontAwesomeIcons.fire, label: 'Flutter'),
-          MyChip(icon: FontAwesomeIcons.fire, label: 'Docker'),
-          MyChip(icon: FontAwesomeIcons.fire, label: 'Firebase'),
-          MyChip(icon: FontAwesomeIcons.fire, label: 'MongoDB'),
-          MyChip(icon: FontAwesomeIcons.fire, label: 'MySQL'),
-          MyChip(icon: FontAwesomeIcons.fire, label: 'PostgreSQL'),
-          MyChip(icon: FontAwesomeIcons.fire, label: 'UI & UX'),
-        ],
+    return ExpansionTile(
+      leading: Icon(FontAwesomeIcons.fire),
+      title: Container(
+        padding: const EdgeInsets.all(8),
+        width: double.maxFinite,
+        child: Text('Skills'),
       ),
+      children: [
+        Container(
+          padding: const EdgeInsets.all(8),
+          width: double.maxFinite,
+          child: Wrap(
+            spacing: 4,
+            runSpacing: 4,
+            children: [
+              MyChip(icon: FontAwesomeIcons.github, label: 'git'),
+              MyChip(icon: FontAwesomeIcons.code, label: 'Dart'),
+              MyChip(icon: FontAwesomeIcons.code, label: 'C#'),
+              MyChip(icon: FontAwesomeIcons.code, label: 'JavaScript'),
+              MyChip(icon: FontAwesomeIcons.code, label: 'TypeScript'),
+              MyChip(icon: FontAwesomeIcons.code, label: 'HTML'),
+              MyChip(icon: FontAwesomeIcons.code, label: 'CSS'),
+              MyChip(icon: FontAwesomeIcons.code, label: 'XML'),
+              MyChip(icon: FontAwesomeIcons.code, label: 'YAML'),
+              MyChip(icon: FontAwesomeIcons.code, label: 'JSON'),
+              MyChip(icon: FontAwesomeIcons.meteor, label: 'Kanban'),
+              MyChip(icon: FontAwesomeIcons.meteor, label: 'Agile'),
+              MyChip(icon: FontAwesomeIcons.meteor, label: 'Scrum'),
+              MyChip(icon: FontAwesomeIcons.edit, label: 'JetBrains'),
+              MyChip(icon: FontAwesomeIcons.edit, label: 'VSCode'),
+              MyChip(icon: FontAwesomeIcons.edit, label: 'Photoshop'),
+              MyChip(icon: FontAwesomeIcons.edit, label: 'Illustrator'),
+              MyChip(icon: FontAwesomeIcons.edit, label: 'Illustrator'),
+              MyChip(icon: FontAwesomeIcons.edit, label: 'XD'),
+              MyChip(icon: FontAwesomeIcons.edit, label: 'Sketch'),
+              MyChip(icon: FontAwesomeIcons.weebly, label: 'HTTP'),
+              MyChip(icon: FontAwesomeIcons.weebly, label: 'REST'),
+              MyChip(icon: FontAwesomeIcons.weebly, label: 'GraphQL'),
+              MyChip(icon: FontAwesomeIcons.brain, label: 'OOP'),
+              MyChip(icon: FontAwesomeIcons.brain, label: 'Design Patterns'),
+              MyChip(icon: FontAwesomeIcons.brain, label: 'SOLID & DRY'),
+              MyChip(icon: FontAwesomeIcons.fire, label: 'NodeJS'),
+              MyChip(icon: FontAwesomeIcons.fire, label: 'Vue'),
+              MyChip(icon: FontAwesomeIcons.fire, label: 'Wordpress'),
+              MyChip(icon: FontAwesomeIcons.fire, label: '.NET'),
+              MyChip(icon: FontAwesomeIcons.fire, label: 'Flutter'),
+              MyChip(icon: FontAwesomeIcons.fire, label: 'Docker'),
+              MyChip(icon: FontAwesomeIcons.fire, label: 'Firebase'),
+              MyChip(icon: FontAwesomeIcons.fire, label: 'MongoDB'),
+              MyChip(icon: FontAwesomeIcons.fire, label: 'MySQL'),
+              MyChip(icon: FontAwesomeIcons.fire, label: 'PostgreSQL'),
+              MyChip(icon: FontAwesomeIcons.fire, label: 'UI & UX'),
+              MyChip(icon: FontAwesomeIcons.fire, label: 'CI/CD'),
+              MyChip(icon: FontAwesomeIcons.fire, label: 'Unit Test'),
+              MyChip(icon: FontAwesomeIcons.fire, label: 'Integration Test'),
+            ],
+          ),
+        )
+      ],
     );
   }
 }
@@ -505,7 +516,6 @@ class _MouseHoverColorChangerWidgetState
 
   @override
   Widget build(BuildContext context) {
-    debugPrint('build');
     return MouseRegion(
       child: Material(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
