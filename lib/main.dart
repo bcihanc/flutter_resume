@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:timelines/timelines.dart';
@@ -42,8 +40,7 @@ class Page extends StatelessWidget {
                           begin: Alignment.topRight,
                           end: Alignment.bottomLeft,
                           colors: [Colors.blueGrey, Colors.deepPurple]),
-                      borderRadius:
-                          BorderRadius.vertical(top: Radius.circular(8))),
+                      borderRadius: BorderRadius.vertical(top: Radius.circular(8))),
                   child: Container(
                     padding: const EdgeInsets.all(8.0),
                     child: Column(
@@ -63,7 +60,7 @@ class Page extends StatelessWidget {
                     children: [
                       HeaderWidget(),
                       SizedBox(height: 16),
-                      BodyWidget(),
+                      // BodyWidget(),
                       TimelinesWidget(),
                     ],
                   ),
@@ -80,7 +77,7 @@ class Page extends StatelessWidget {
 
 class FooterWidget extends StatelessWidget {
   const FooterWidget({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -89,9 +86,7 @@ class FooterWidget extends StatelessWidget {
       padding: const EdgeInsets.all(8),
       decoration: BoxDecoration(
           gradient: LinearGradient(
-              begin: Alignment.topRight,
-              end: Alignment.bottomLeft,
-              colors: [Colors.blueGrey, Colors.deepPurple]),
+              begin: Alignment.topRight, end: Alignment.bottomLeft, colors: [Colors.blueGrey, Colors.deepPurple]),
           borderRadius: BorderRadius.vertical(bottom: Radius.circular(8))),
       child: Wrap(
         children: [
@@ -113,8 +108,8 @@ class HeaderWidget extends StatelessWidget {
         Align(
           alignment: Alignment.centerLeft,
           child: Text(
-            "Selam ben Cihan,",
-            style: TextStyle(fontSize: 28),
+            "Projects",
+            style: TextStyle(fontSize: 22),
           ),
         ),
         SizedBox(width: 8),
@@ -125,7 +120,7 @@ class HeaderWidget extends StatelessWidget {
 
 class BodyWidget extends StatelessWidget {
   const BodyWidget({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -154,6 +149,34 @@ class TimelinesWidget extends StatelessWidget {
           oppositeContents: TimelineNodeLeftSideWidget(
             projects: [
               ProjectsModel(
+                  name: 'Aytemiz Vaay',
+                  source: 'https://github.com/TeamEPIC/flutter_hackathon_21',
+                  icon: FontAwesomeIcons.github),
+              ProjectsModel(
+                  name: 'Aytemiz Depot',
+                  source: '',
+                  icon: FontAwesomeIcons.github),
+            ],
+          ),
+          contents: TimelineNodeRightSideWidget(
+            company: 'Aytemiz BT',
+            title: 'Software Developer - Present',
+            body: "",
+          ),
+          node: TimelineNode(
+            indicator: OutlinedDotIndicator(),
+            startConnector: TransparentConnector(),
+            endConnector: SolidLineConnector(),
+          ),
+        ),
+        TimelineTile(
+          oppositeContents: TimelineNodeLeftSideWidget(
+            projects: [
+              ProjectsModel(
+                  name: 'DimiAPI NestJS',
+                  source: 'https://github.com/bcihanc/dimi-api',
+                  icon: FontAwesomeIcons.github),
+              ProjectsModel(
                   name: 'Yonder',
                   source: 'https://github.com/TeamEPIC/flutter_hackathon_21',
                   icon: FontAwesomeIcons.github),
@@ -163,8 +186,7 @@ class TimelinesWidget extends StatelessWidget {
                   icon: FontAwesomeIcons.github),
               ProjectsModel(
                   name: 'Shopzone',
-                  source:
-                      'https://github.com/bcihanc/flutter_shoppingapp_sample',
+                  source: 'https://github.com/bcihanc/flutter_shoppingapp_sample',
                   icon: FontAwesomeIcons.github),
               ProjectsModel(
                   name: 'Tasky',
@@ -177,39 +199,32 @@ class TimelinesWidget extends StatelessWidget {
             ],
           ),
           contents: TimelineNodeRightSideWidget(
-            company: 'Samples',
-            title: 'Flutter Dev - 2021',
+            company: 'Freelance',
+            title: 'Flutter Developer - 2021',
             body:
                 "Hem egitim hemde portfolio amacli yarattigim bir kac uygulama, rest api isteklerini, local veritabani kontrollerini ve state yonetimi gibi konulara nasil yaklastigimi bu projelerden gorebilirsiniz.",
           ),
           node: TimelineNode(
             indicator: OutlinedDotIndicator(),
-            startConnector: TransparentConnector(),
+            startConnector: SolidLineConnector(),
             endConnector: SolidLineConnector(),
           ),
         ),
         TimelineTile(
           oppositeContents: TimelineNodeLeftSideWidget(
             projects: [
+              ProjectsModel(name: 'reff', source: 'https://github.com/bcihanc/reff', icon: FontAwesomeIcons.github),
               ProjectsModel(
-                  name: 'reff',
-                  source: 'https://github.com/bcihanc/reff',
-                  icon: FontAwesomeIcons.github),
+                  name: 'reff web', source: 'https://github.com/bcihanc/reff_web', icon: FontAwesomeIcons.github),
               ProjectsModel(
-                  name: 'reff web',
-                  source: 'https://github.com/bcihanc/reff_web',
-                  icon: FontAwesomeIcons.github),
-              ProjectsModel(
-                  name: 'reff shared',
-                  source: 'https://github.com/bcihanc/reff_shared',
-                  icon: FontAwesomeIcons.github),
+                  name: 'reff shared', source: 'https://github.com/bcihanc/reff_shared', icon: FontAwesomeIcons.github),
             ],
           ),
           contents: TimelineNodeRightSideWidget(
             company: 'Kare Agency',
-            title: 'Flutter Dev - 2020',
+            title: 'Flutter Developer - 2020',
             body:
-                "Firebase'in neredeyse tum yeteneklerini kullanan bir anket uygulamasi, mobil taraf kullanicilarla etkilesime gecen modul, web tarafi veritabanini ve istatistikleri yoneten modul.",
+                "Firebase'in tum yeteneklerini kullanan bir uygulamasi, mobil taraf kullanicilarla etkilesime gecen modul, web tarafi veritabanini ve istatistikleri yoneten modul.",
           ),
           node: TimelineNode(
             indicator: OutlinedDotIndicator(),
@@ -217,33 +232,31 @@ class TimelinesWidget extends StatelessWidget {
             endConnector: SolidLineConnector(),
           ),
         ),
-        TimelineTile(
-          oppositeContents: TimelineNodeLeftSideWidget(
-            projects: [
-              ProjectsModel(
-                  name: 'Easy Workouts',
-                  source:
-                      'https://play.google.com/store/apps/details?id=com.greycatapps.workouts&hl=en&gl=US',
-                  icon: FontAwesomeIcons.android),
-              ProjectsModel(
-                  name: "Smoker's Calc",
-                  source:
-                      'https://play.google.com/store/apps/details?id=com.greycatapps.smokerscalc&hl=en&gl=US',
-                  icon: FontAwesomeIcons.android),
-            ],
-          ),
-          contents: TimelineNodeRightSideWidget(
-            company: 'Grey Cat Apps',
-            title: 'Flutter Dev - 2019',
-            body:
-                "Flutter ile birlikte gecirdigimiz ilk 6 ay icinde ortaya cikan 2 kucuk uygulama, AppStore ve Play Store icin yayinlama ve guncelleme deneyimi.",
-          ),
-          node: TimelineNode(
-            indicator: OutlinedDotIndicator(),
-            startConnector: SolidLineConnector(),
-            endConnector: TransparentConnector(),
-          ),
-        ),
+        // TimelineTile(
+        //   oppositeContents: TimelineNodeLeftSideWidget(
+        //     projects: [
+        //       ProjectsModel(
+        //           name: 'Easy Workouts',
+        //           source: 'https://play.google.com/store/apps/details?id=com.greycatapps.workouts&hl=en&gl=US',
+        //           icon: FontAwesomeIcons.android),
+        //       ProjectsModel(
+        //           name: "Smoker's Calc",
+        //           source: 'https://play.google.com/store/apps/details?id=com.greycatapps.smokerscalc&hl=en&gl=US',
+        //           icon: FontAwesomeIcons.android),
+        //     ],
+        //   ),
+        //   contents: TimelineNodeRightSideWidget(
+        //     company: 'Grey Cat Apps',
+        //     title: 'Flutter Developer - 2019',
+        //     body:
+        //         "Mobil uygulama maceramin basladigi ile birlikte gecirdigimiz ilk 6 ay icinde ortaya cikan 2 kucuk uygulama, AppStore ve Play Store icin yayinlama ve guncelleme deneyimi.",
+        //   ),
+        //   node: TimelineNode(
+        //     indicator: OutlinedDotIndicator(),
+        //     startConnector: SolidLineConnector(),
+        //     endConnector: TransparentConnector(),
+        //   ),
+        // ),
       ],
     );
   }
@@ -251,10 +264,10 @@ class TimelinesWidget extends StatelessWidget {
 
 class ProjectsModel {
   final String name;
-  final String source;
+  final String? source;
   final IconData icon;
 
-  const ProjectsModel({this.name, this.source, this.icon});
+  const ProjectsModel({required this.name, required this.source, required this.icon});
 }
 
 class TimelineNodeLeftSideWidget extends StatelessWidget {
@@ -262,8 +275,8 @@ class TimelineNodeLeftSideWidget extends StatelessWidget {
   final List<ProjectsModel> projects;
 
   const TimelineNodeLeftSideWidget({
-    Key key,
-    this.projects,
+    Key? key,
+    required this.projects,
   }) : super(key: key);
 
   @override
@@ -276,10 +289,12 @@ class TimelineNodeLeftSideWidget extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: projects.map((project) {
             return TextButton.icon(
-                style: TextButton.styleFrom(
-                    alignment: Alignment.centerLeft,
-                    textStyle: TextStyle(fontSize: 12)),
-                onPressed: () => launchUrl(project.source),
+                style: TextButton.styleFrom(alignment: Alignment.centerLeft, textStyle: TextStyle(fontSize: 12)),
+                onPressed: () {
+                  if(project.source != null){
+                    launchUrl(project.source!);
+                  }
+                },
                 icon: Icon(project.icon, size: 12),
                 label: Text(
                   project.name,
@@ -294,7 +309,7 @@ class TimelineNodeLeftSideWidget extends StatelessWidget {
 
 class AvatarWidget extends StatelessWidget {
   const AvatarWidget({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -315,7 +330,7 @@ class AvatarWidget extends StatelessWidget {
 
 class NameAndTitleWidget extends StatelessWidget {
   const NameAndTitleWidget({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -328,7 +343,7 @@ class NameAndTitleWidget extends StatelessWidget {
           'Cihan Cengiz',
           style: TextStyle(fontSize: 24),
         ),
-        Text('Flutter Dev'),
+        Text('Flutter Developer'),
       ],
     );
   }
@@ -336,16 +351,14 @@ class NameAndTitleWidget extends StatelessWidget {
 
 class LanguageToggleButtonsWidget extends StatefulWidget {
   const LanguageToggleButtonsWidget({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
-  _LanguageToggleButtonsWidgetState createState() =>
-      _LanguageToggleButtonsWidgetState();
+  _LanguageToggleButtonsWidgetState createState() => _LanguageToggleButtonsWidgetState();
 }
 
-class _LanguageToggleButtonsWidgetState
-    extends State<LanguageToggleButtonsWidget> {
+class _LanguageToggleButtonsWidgetState extends State<LanguageToggleButtonsWidget> {
   final isSelected = [true, false];
 
   @override
@@ -354,9 +367,7 @@ class _LanguageToggleButtonsWidgetState
         constraints: BoxConstraints(minHeight: 28, minWidth: 28),
         onPressed: (index) {
           setState(() {
-            for (int buttonIndex = 0;
-                buttonIndex < isSelected.length;
-                buttonIndex++) {
+            for (int buttonIndex = 0; buttonIndex < isSelected.length; buttonIndex++) {
               if (buttonIndex == index) {
                 isSelected[buttonIndex] = true;
               } else {
@@ -372,7 +383,7 @@ class _LanguageToggleButtonsWidgetState
 
 class MadebyFlutterWidget extends StatelessWidget {
   const MadebyFlutterWidget({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
@@ -387,11 +398,10 @@ class MadebyFlutterWidget extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
             child: Image.asset('assets/flutter.png', height: 16, width: 16),
           ),
-          Text('Web with'),
+          Text('with'),
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 8.0),
-            child:
-                Icon(FontAwesomeIcons.solidHeart, size: 16, color: Colors.red),
+            child: Icon(FontAwesomeIcons.solidHeart, size: 16, color: Colors.red),
           ),
         ],
       ),
@@ -403,6 +413,7 @@ class SkillsTagCloud extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ExpansionTile(
+      initiallyExpanded: true,
       leading: Icon(FontAwesomeIcons.fire),
       title: Container(
         padding: const EdgeInsets.all(8),
@@ -430,13 +441,12 @@ class SkillsTagCloud extends StatelessWidget {
               MyChip(icon: FontAwesomeIcons.meteor, label: 'Kanban'),
               MyChip(icon: FontAwesomeIcons.meteor, label: 'Agile'),
               MyChip(icon: FontAwesomeIcons.meteor, label: 'Scrum'),
-              MyChip(icon: FontAwesomeIcons.edit, label: 'JetBrains'),
-              MyChip(icon: FontAwesomeIcons.edit, label: 'VSCode'),
-              MyChip(icon: FontAwesomeIcons.edit, label: 'Photoshop'),
-              MyChip(icon: FontAwesomeIcons.edit, label: 'Illustrator'),
-              MyChip(icon: FontAwesomeIcons.edit, label: 'Illustrator'),
-              MyChip(icon: FontAwesomeIcons.edit, label: 'XD'),
-              MyChip(icon: FontAwesomeIcons.edit, label: 'Sketch'),
+              MyChip(icon: FontAwesomeIcons.penToSquare, label: 'JetBrains'),
+              MyChip(icon: FontAwesomeIcons.penToSquare, label: 'VSCode'),
+              MyChip(icon: FontAwesomeIcons.penToSquare, label: 'Photoshop'),
+              MyChip(icon: FontAwesomeIcons.penToSquare, label: 'Illustrator'),
+              MyChip(icon: FontAwesomeIcons.penToSquare, label: 'XD'),
+              MyChip(icon: FontAwesomeIcons.penToSquare, label: 'Sketch'),
               MyChip(icon: FontAwesomeIcons.weebly, label: 'HTTP'),
               MyChip(icon: FontAwesomeIcons.weebly, label: 'REST'),
               MyChip(icon: FontAwesomeIcons.weebly, label: 'GraphQL'),
@@ -444,6 +454,8 @@ class SkillsTagCloud extends StatelessWidget {
               MyChip(icon: FontAwesomeIcons.brain, label: 'Design Patterns'),
               MyChip(icon: FontAwesomeIcons.brain, label: 'SOLID & DRY'),
               MyChip(icon: FontAwesomeIcons.fire, label: 'NodeJS'),
+              MyChip(icon: FontAwesomeIcons.fire, label: 'ExpressJS'),
+              MyChip(icon: FontAwesomeIcons.fire, label: 'NestJS'),
               MyChip(icon: FontAwesomeIcons.fire, label: 'Vue'),
               MyChip(icon: FontAwesomeIcons.fire, label: 'Wordpress'),
               MyChip(icon: FontAwesomeIcons.fire, label: '.NET'),
@@ -470,9 +482,9 @@ class MyChip extends StatelessWidget {
   final String label;
 
   const MyChip({
-    Key key,
-    this.icon,
-    this.label,
+    Key? key,
+    required this.icon,
+    required this.label,
   }) : super(key: key);
 
   @override
@@ -501,17 +513,15 @@ class MyChip extends StatelessWidget {
 }
 
 class MouseHoverColorChangerWidget extends StatefulWidget {
-  const MouseHoverColorChangerWidget({Key key, this.child}) : super(key: key);
+  const MouseHoverColorChangerWidget({Key? key, required this.child}) : super(key: key);
 
   final Widget child;
 
   @override
-  _MouseHoverColorChangerWidgetState createState() =>
-      _MouseHoverColorChangerWidgetState();
+  _MouseHoverColorChangerWidgetState createState() => _MouseHoverColorChangerWidgetState();
 }
 
-class _MouseHoverColorChangerWidgetState
-    extends State<MouseHoverColorChangerWidget> {
+class _MouseHoverColorChangerWidgetState extends State<MouseHoverColorChangerWidget> {
   var _onHover = false;
 
   @override
@@ -519,9 +529,7 @@ class _MouseHoverColorChangerWidgetState
     return MouseRegion(
       child: Material(
           shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
-          color: _onHover
-              ? Theme.of(context).accentColor.withOpacity(0.3)
-              : Colors.transparent,
+          color: _onHover ? Theme.of(context).colorScheme.secondary.withOpacity(0.3) : Colors.transparent,
           child: widget.child),
       onHover: (event) {
         if (!_onHover) {
@@ -539,14 +547,13 @@ class _MouseHoverColorChangerWidgetState
 
 class ContactsWidget extends StatelessWidget {
   const ContactsWidget({
-    Key key,
+    Key? key,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Theme(
-      data: Theme.of(context)
-          .copyWith(iconTheme: Theme.of(context).iconTheme.copyWith(size: 16)),
+      data: Theme.of(context).copyWith(iconTheme: Theme.of(context).iconTheme.copyWith(size: 16)),
       child: ListView(
         shrinkWrap: true,
         children: [
@@ -625,8 +632,7 @@ class TimelineNodeRightSideWidget extends StatelessWidget {
   final String title;
   final String body;
 
-  const TimelineNodeRightSideWidget(
-      {Key key, this.company, this.title, this.body})
+  const TimelineNodeRightSideWidget({Key? key, required this.company, required this.title, required this.body})
       : super(key: key);
 
   @override
@@ -645,10 +651,7 @@ class TimelineNodeRightSideWidget extends StatelessWidget {
                 style: TextStyle(fontStyle: FontStyle.italic, fontSize: 11),
               )),
           Divider(),
-          Opacity(
-              opacity: 0.4,
-              child: Text(body,
-                  style: TextStyle(fontStyle: FontStyle.italic, fontSize: 12)))
+          Opacity(opacity: 0.4, child: Text(body, style: TextStyle(fontStyle: FontStyle.italic, fontSize: 12)))
         ],
       ),
     );
